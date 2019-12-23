@@ -1,0 +1,158 @@
+// ⚡️ Flash Grid
+$grid-columns: 12 !default;
+
+.grid, [class*="grid-auto-"] {
+  display: grid;
+  grid-gap: var(--grid-gap, 0);
+}
+
+.grid {
+  --grid-cols: #{$grid-columns};
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+
+  > * {
+    --col-span: var(--grid-cols);
+    grid-column: span var(--col-span);
+  }
+}
+
+.grid-auto-xs, .grid-auto-sm, .grid-auto-md, .grid-auto-lg, .grid-auto-xl { // auto-sized grid
+  grid-template-columns: repeat(auto-fit, minmax(var(--col-min-width), 1fr));
+}
+
+.grid-auto-xs { --col-min-width: 8rem; }
+.grid-auto-sm { --col-min-width: 10rem; }
+.grid-auto-md { --col-min-width: 15rem; }
+.grid-auto-lg { --col-min-width: 20rem; }
+.grid-auto-xl { --col-min-width: 25rem; }
+
+.grid-auto-cols { // cols = same size
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+}
+
+.grid-gap-xxxxs { --grid-gap: var(--space-xxxxs, 0.125rem); }
+.grid-gap-xxxs  { --grid-gap: var(--space-xxxs, 0.25rem); }
+.grid-gap-xxs   { --grid-gap: var(--space-xxs, 0.375rem); }
+.grid-gap-xs    { --grid-gap: var(--space-xs, 0.5rem); }
+.grid-gap-sm    { --grid-gap: var(--space-sm, 0.75rem); }
+.grid-gap-md    { --grid-gap: var(--space-md, 1.25rem); }
+.grid-gap-lg    { --grid-gap: var(--space-lg, 2rem); }
+.grid-gap-xl    { --grid-gap: var(--space-xl, 3.25rem); }
+.grid-gap-xxl   { --grid-gap: var(--space-xxl, 5.25rem); }
+.grid-gap-xxxl  { --grid-gap: var(--space-xxxl, 8.5rem); }
+.grid-gap-xxxxl { --grid-gap: var(--space-xxxxl, 13.75rem); }
+
+@for $i from 1 through $grid-columns {
+  .col-#{$i}  { --col-span: #{$i}; }
+}
+
+.col-start { grid-column: 1 / span var(--col-span); }
+.col-end { grid-column: span var(--col-span) / -1; }
+
+// breakpoints
+$breakpoints: (
+  xs: 32rem, 
+  sm: 48rem,
+  md: 64rem,
+  lg: 80rem,
+  xl: 90rem
+) !default;
+
+@mixin breakpoint($breakpoint) {
+  @media (min-width: map-get($map: $breakpoints, $key: $breakpoint)) { @content; }
+}
+
+@include breakpoint(xs) {
+  .grid-auto-xs\@xs { --col-min-width: 8rem; }
+  .grid-auto-sm\@xs { --col-min-width: 10rem; }
+  .grid-auto-md\@xs { --col-min-width: 15rem; }
+  .grid-auto-lg\@xs { --col-min-width: 20rem; }
+  .grid-auto-xl\@xs { --col-min-width: 25rem; }
+
+  .grid-auto-cols\@xs { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); }
+
+  @for $i from 1 through $grid-columns {
+    .col-#{$i}\@xs  { --col-span: #{$i}; }
+  }
+
+  .col-start\@xs { grid-column: 1 / span var(--col-span); }
+  .col-start-auto\@xs { grid-column: auto / span var(--col-span); }
+  .col-end\@xs { grid-column: span var(--col-span) / -1; }
+  .col-end-auto\@xs { grid-column: span var(--col-span) / auto; }
+}
+
+@include breakpoint(sm) {
+  .grid-auto-xs\@sm { --col-min-width: 8rem; }
+  .grid-auto-sm\@sm { --col-min-width: 10rem; }
+  .grid-auto-md\@sm { --col-min-width: 15rem; }
+  .grid-auto-lg\@sm { --col-min-width: 20rem; }
+  .grid-auto-xl\@sm { --col-min-width: 25rem; }
+
+  .grid-auto-cols\@sm { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); }
+
+  @for $i from 1 through $grid-columns {
+    .col-#{$i}\@sm  { --col-span: #{$i}; }
+  }
+
+  .col-start\@sm { grid-column: 1 / span var(--col-span); }
+  .col-start-auto\@sm { grid-column: auto / span var(--col-span); }
+  .col-end\@sm { grid-column: span var(--col-span) / -1; }
+  .col-end-auto\@sm { grid-column: span var(--col-span) / auto; }
+}
+
+@include breakpoint(md) {
+  .grid-auto-xs\@md { --col-min-width: 8rem; }
+  .grid-auto-sm\@md { --col-min-width: 10rem; }
+  .grid-auto-md\@md { --col-min-width: 15rem; }
+  .grid-auto-lg\@md { --col-min-width: 20rem; }
+  .grid-auto-xl\@md { --col-min-width: 25rem; }
+
+  .grid-auto-cols\@md { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); }
+
+  @for $i from 1 through $grid-columns {
+    .col-#{$i}\@md  { --col-span: #{$i}; }
+  }
+
+  .col-start\@md { grid-column: 1 / span var(--col-span); }
+  .col-start-auto\@md { grid-column: auto / span var(--col-span); }
+  .col-end\@md { grid-column: span var(--col-span) / -1; }
+  .col-end-auto\@md { grid-column: span var(--col-span) / auto; }
+}
+
+@include breakpoint(lg) {
+  .grid-auto-xs\@lg { --col-min-width: 8rem; }
+  .grid-auto-sm\@lg { --col-min-width: 10rem; }
+  .grid-auto-md\@lg { --col-min-width: 15rem; }
+  .grid-auto-lg\@lg { --col-min-width: 20rem; }
+  .grid-auto-xl\@lg { --col-min-width: 25rem; }
+
+  .grid-auto-cols\@lg { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); }
+
+  @for $i from 1 through $grid-columns {
+    .col-#{$i}\@lg  { --col-span: #{$i}; }
+  }
+
+  .col-start\@lg { grid-column: 1 / span var(--col-span); }
+  .col-start-auto\@lg { grid-column: auto / span var(--col-span); }
+  .col-end\@lg { grid-column: span var(--col-span) / -1; }
+  .col-end-auto\@lg { grid-column: span var(--col-span) / auto; }
+}
+
+@include breakpoint(xl) {
+  .grid-auto-xs\@xl { --col-min-width: 8rem; }
+  .grid-auto-sm\@xl { --col-min-width: 10rem; }
+  .grid-auto-md\@xl { --col-min-width: 15rem; }
+  .grid-auto-lg\@xl { --col-min-width: 20rem; }
+  .grid-auto-xl\@xl { --col-min-width: 25rem; }
+
+  .grid-auto-cols\@xl { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); }
+
+  @for $i from 1 through $grid-columns {
+    .col-#{$i}\@xl  { --col-span: #{$i}; }
+  }
+
+  .col-start\@xl { grid-column: 1 / span var(--col-span); }
+  .col-start-auto\@xl { grid-column: auto / span var(--col-span); }
+  .col-end\@xl { grid-column: span var(--col-span) / -1; }
+  .col-end-auto\@xl { grid-column: span var(--col-span) / auto; }
+}
