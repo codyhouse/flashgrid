@@ -1,0 +1,19 @@
+{
+  "name": "flashgrid",
+  "version": "0.0.3",
+  "description": "A lightweight CSS Grid System by CodyHouse.",
+  "keywords": [
+    "scss",
+    "css",
+    "css-grid",
+    "grid",
+    "codyhouse"
+  ],
+  "author": "Amber Creative Lab <info@ambercreative.co>",
+  "license": "MIT",
+  "homepage": "https://codyhouse.co",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodyHouse/flashgrid.git"
+  }
+}
