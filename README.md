@@ -1,12 +1,11 @@
 # ⚡️ Flash Grid
 
-A lightweight CSS Grid System by CodyHouse.
+A lightweight grid system based on CSS Grid Layout.
 
-## Why?
+- 🕹 [Demo on Codepen](https://codepen.io/codyhouse/pen/WNbjJRQ)
+- 📝 [Learn more on Dev.to](https://dev.to/codyhouse/flash-grid-learn-css-grid-by-building-a-grid-system-2c4f)
 
-We're experimenting with a grid system (based on CSS Grid) that will eventually be an alternative to the current grid system (based on Flexbox) of CodyFrame.
-
-## UI Framework
+## CodyHouse UI Framework
 
 CodyHouse's UI Framework is an arsenal of production-ready components and tools that empower web designers to craft digital experiences faster and better.
 
