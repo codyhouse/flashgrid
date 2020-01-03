@@ -10,7 +10,7 @@
 }
 
 .grid > * {
-  grid-column-end: span var(--grid-cols);
+  grid-column: span var(--span, 12);
 }
 
 .grid-auto-xs, .grid-auto-sm, .grid-auto-md, .grid-auto-lg, .grid-auto-xl {
@@ -85,156 +85,168 @@
   --grid-gap: var(--space-xxxxl, 13.75rem);
 }
 
+[class*="col-start"] {
+  grid-column: var(--col-start, auto)/span var(--span, 1);
+}
+
+[class*="col-end"] {
+  grid-column: span var(--span, 1)/var(--col-end, auto);
+}
+
+[class*="col-start"][class*="col-end"] {
+  grid-column: var(--col-start, auto)/var(--col-end, auto);
+}
+
 .col-1 {
-  grid-column-end: span 1;
+  --span: 1;
 }
 
 .col-start-1 {
-  grid-column-start: 1;
+  --col-start: 1;
 }
 
 .col-end-2 {
-  grid-column-end: 2;
+  --col-end: 2;
 }
 
 .col-2 {
-  grid-column-end: span 2;
+  --span: 2;
 }
 
 .col-start-2 {
-  grid-column-start: 2;
+  --col-start: 2;
 }
 
 .col-end-3 {
-  grid-column-end: 3;
+  --col-end: 3;
 }
 
 .col-3 {
-  grid-column-end: span 3;
+  --span: 3;
 }
 
 .col-start-3 {
-  grid-column-start: 3;
+  --col-start: 3;
 }
 
 .col-end-4 {
-  grid-column-end: 4;
+  --col-end: 4;
 }
 
 .col-4 {
-  grid-column-end: span 4;
+  --span: 4;
 }
 
 .col-start-4 {
-  grid-column-start: 4;
+  --col-start: 4;
 }
 
 .col-end-5 {
-  grid-column-end: 5;
+  --col-end: 5;
 }
 
 .col-5 {
-  grid-column-end: span 5;
+  --span: 5;
 }
 
 .col-start-5 {
-  grid-column-start: 5;
+  --col-start: 5;
 }
 
 .col-end-6 {
-  grid-column-end: 6;
+  --col-end: 6;
 }
 
 .col-6 {
-  grid-column-end: span 6;
+  --span: 6;
 }
 
 .col-start-6 {
-  grid-column-start: 6;
+  --col-start: 6;
 }
 
 .col-end-7 {
-  grid-column-end: 7;
+  --col-end: 7;
 }
 
 .col-7 {
-  grid-column-end: span 7;
+  --span: 7;
 }
 
 .col-start-7 {
-  grid-column-start: 7;
+  --col-start: 7;
 }
 
 .col-end-8 {
-  grid-column-end: 8;
+  --col-end: 8;
 }
 
 .col-8 {
-  grid-column-end: span 8;
+  --span: 8;
 }
 
 .col-start-8 {
-  grid-column-start: 8;
+  --col-start: 8;
 }
 
 .col-end-9 {
-  grid-column-end: 9;
+  --col-end: 9;
 }
 
 .col-9 {
-  grid-column-end: span 9;
+  --span: 9;
 }
 
 .col-start-9 {
-  grid-column-start: 9;
+  --col-start: 9;
 }
 
 .col-end-10 {
-  grid-column-end: 10;
+  --col-end: 10;
 }
 
 .col-10 {
-  grid-column-end: span 10;
+  --span: 10;
 }
 
 .col-start-10 {
-  grid-column-start: 10;
+  --col-start: 10;
 }
 
 .col-end-11 {
-  grid-column-end: 11;
+  --col-end: 11;
 }
 
 .col-11 {
-  grid-column-end: span 11;
+  --span: 11;
 }
 
 .col-start-11 {
-  grid-column-start: 11;
+  --col-start: 11;
 }
 
 .col-end-12 {
-  grid-column-end: 12;
+  --col-end: 12;
 }
 
 .col-12 {
-  grid-column-end: span 12;
+  --span: 12;
 }
 
 .col-start-12 {
-  grid-column-start: 12;
+  --col-start: 12;
 }
 
 .col-end-13 {
-  grid-column-end: 13;
+  --col-end: 13;
 }
 
 .col-start {
-  grid-column-start: 1;
+  --col-start: 1;
 }
 
 .col-end {
-  grid-column-end: -1;
+  --col-end: -1;
 }
 
 @media (min-width: 32rem) {
@@ -263,155 +275,163 @@
   }
 
   .col-1\@xs {
-    grid-column-end: span 1;
+    --span: 1;
   }
 
   .col-start-1\@xs {
-    grid-column-start: 1;
+    --col-start: 1;
   }
 
   .col-end-2\@xs {
-    grid-column-end: 2;
+    --col-end: 2;
   }
 
   .col-2\@xs {
-    grid-column-end: span 2;
+    --span: 2;
   }
 
   .col-start-2\@xs {
-    grid-column-start: 2;
+    --col-start: 2;
   }
 
   .col-end-3\@xs {
-    grid-column-end: 3;
+    --col-end: 3;
   }
 
   .col-3\@xs {
-    grid-column-end: span 3;
+    --span: 3;
   }
 
   .col-start-3\@xs {
-    grid-column-start: 3;
+    --col-start: 3;
   }
 
   .col-end-4\@xs {
-    grid-column-end: 4;
+    --col-end: 4;
   }
 
   .col-4\@xs {
-    grid-column-end: span 4;
+    --span: 4;
   }
 
   .col-start-4\@xs {
-    grid-column-start: 4;
+    --col-start: 4;
   }
 
   .col-end-5\@xs {
-    grid-column-end: 5;
+    --col-end: 5;
   }
 
   .col-5\@xs {
-    grid-column-end: span 5;
+    --span: 5;
   }
 
   .col-start-5\@xs {
-    grid-column-start: 5;
+    --col-start: 5;
   }
 
   .col-end-6\@xs {
-    grid-column-end: 6;
+    --col-end: 6;
   }
 
   .col-6\@xs {
-    grid-column-end: span 6;
+    --span: 6;
   }
 
   .col-start-6\@xs {
-    grid-column-start: 6;
+    --col-start: 6;
   }
 
   .col-end-7\@xs {
-    grid-column-end: 7;
+    --col-end: 7;
   }
 
   .col-7\@xs {
-    grid-column-end: span 7;
+    --span: 7;
   }
 
   .col-start-7\@xs {
-    grid-column-start: 7;
+    --col-start: 7;
   }
 
   .col-end-8\@xs {
-    grid-column-end: 8;
+    --col-end: 8;
   }
 
   .col-8\@xs {
-    grid-column-end: span 8;
+    --span: 8;
   }
 
   .col-start-8\@xs {
-    grid-column-start: 8;
+    --col-start: 8;
   }
 
   .col-end-9\@xs {
-    grid-column-end: 9;
+    --col-end: 9;
   }
 
   .col-9\@xs {
-    grid-column-end: span 9;
+    --span: 9;
   }
 
   .col-start-9\@xs {
-    grid-column-start: 9;
+    --col-start: 9;
   }
 
   .col-end-10\@xs {
-    grid-column-end: 10;
+    --col-end: 10;
   }
 
   .col-10\@xs {
-    grid-column-end: span 10;
+    --span: 10;
   }
 
   .col-start-10\@xs {
-    grid-column-start: 10;
+    --col-start: 10;
   }
 
   .col-end-11\@xs {
-    grid-column-end: 11;
+    --col-end: 11;
   }
 
   .col-11\@xs {
-    grid-column-end: span 11;
+    --span: 11;
   }
 
   .col-start-11\@xs {
-    grid-column-start: 11;
+    --col-start: 11;
   }
 
   .col-end-12\@xs {
-    grid-column-end: 12;
+    --col-end: 12;
   }
 
   .col-12\@xs {
-    grid-column-end: span 12;
+    --span: 12;
   }
 
   .col-start-12\@xs {
-    grid-column-start: 12;
+    --col-start: 12;
   }
 
   .col-end-13\@xs {
-    grid-column-end: 13;
+    --col-end: 13;
+  }
+
+  .col-start\@xs {
+    --col-start: 1;
+  }
+
+  .col-end\@xs {
+    --col-end: -1;
   }
 
   .col-start-auto\@xs {
-    grid-column-start: auto;
+    --col-start: auto;
   }
 
   .col-end-auto\@xs {
-    grid-column-end: auto;
+    --col-end: auto;
   }
 }
 
@@ -441,155 +461,163 @@
   }
 
   .col-1\@sm {
-    grid-column-end: span 1;
+    --span: 1;
   }
 
   .col-start-1\@sm {
-    grid-column-start: 1;
+    --col-start: 1;
   }
 
   .col-end-2\@sm {
-    grid-column-end: 2;
+    --col-end: 2;
   }
 
   .col-2\@sm {
-    grid-column-end: span 2;
+    --span: 2;
   }
 
   .col-start-2\@sm {
-    grid-column-start: 2;
+    --col-start: 2;
   }
 
   .col-end-3\@sm {
-    grid-column-end: 3;
+    --col-end: 3;
   }
 
   .col-3\@sm {
-    grid-column-end: span 3;
+    --span: 3;
   }
 
   .col-start-3\@sm {
-    grid-column-start: 3;
+    --col-start: 3;
   }
 
   .col-end-4\@sm {
-    grid-column-end: 4;
+    --col-end: 4;
   }
 
   .col-4\@sm {
-    grid-column-end: span 4;
+    --span: 4;
   }
 
   .col-start-4\@sm {
-    grid-column-start: 4;
+    --col-start: 4;
   }
 
   .col-end-5\@sm {
-    grid-column-end: 5;
+    --col-end: 5;
   }
 
   .col-5\@sm {
-    grid-column-end: span 5;
+    --span: 5;
   }
 
   .col-start-5\@sm {
-    grid-column-start: 5;
+    --col-start: 5;
   }
 
   .col-end-6\@sm {
-    grid-column-end: 6;
+    --col-end: 6;
   }
 
   .col-6\@sm {
-    grid-column-end: span 6;
+    --span: 6;
   }
 
   .col-start-6\@sm {
-    grid-column-start: 6;
+    --col-start: 6;
   }
 
   .col-end-7\@sm {
-    grid-column-end: 7;
+    --col-end: 7;
   }
 
   .col-7\@sm {
-    grid-column-end: span 7;
+    --span: 7;
   }
 
   .col-start-7\@sm {
-    grid-column-start: 7;
+    --col-start: 7;
   }
 
   .col-end-8\@sm {
-    grid-column-end: 8;
+    --col-end: 8;
   }
 
   .col-8\@sm {
-    grid-column-end: span 8;
+    --span: 8;
   }
 
   .col-start-8\@sm {
-    grid-column-start: 8;
+    --col-start: 8;
   }
 
   .col-end-9\@sm {
-    grid-column-end: 9;
+    --col-end: 9;
   }
 
   .col-9\@sm {
-    grid-column-end: span 9;
+    --span: 9;
   }
 
   .col-start-9\@sm {
-    grid-column-start: 9;
+    --col-start: 9;
   }
 
   .col-end-10\@sm {
-    grid-column-end: 10;
+    --col-end: 10;
   }
 
   .col-10\@sm {
-    grid-column-end: span 10;
+    --span: 10;
   }
 
   .col-start-10\@sm {
-    grid-column-start: 10;
+    --col-start: 10;
   }
 
   .col-end-11\@sm {
-    grid-column-end: 11;
+    --col-end: 11;
   }
 
   .col-11\@sm {
-    grid-column-end: span 11;
+    --span: 11;
   }
 
   .col-start-11\@sm {
-    grid-column-start: 11;
+    --col-start: 11;
   }
 
   .col-end-12\@sm {
-    grid-column-end: 12;
+    --col-end: 12;
   }
 
   .col-12\@sm {
-    grid-column-end: span 12;
+    --span: 12;
   }
 
   .col-start-12\@sm {
-    grid-column-start: 12;
+    --col-start: 12;
   }
 
   .col-end-13\@sm {
-    grid-column-end: 13;
+    --col-end: 13;
+  }
+
+  .col-start\@sm {
+    --col-start: 1;
+  }
+
+  .col-end\@sm {
+    --col-end: -1;
   }
 
   .col-start-auto\@sm {
-    grid-column-start: auto;
+    --col-start: auto;
   }
 
   .col-end-auto\@sm {
-    grid-column-end: auto;
+    --col-end: auto;
   }
 }
 
@@ -619,155 +647,163 @@
   }
 
   .col-1\@md {
-    grid-column-end: span 1;
+    --span: 1;
   }
 
   .col-start-1\@md {
-    grid-column-start: 1;
+    --col-start: 1;
   }
 
   .col-end-2\@md {
-    grid-column-end: 2;
+    --col-end: 2;
   }
 
   .col-2\@md {
-    grid-column-end: span 2;
+    --span: 2;
   }
 
   .col-start-2\@md {
-    grid-column-start: 2;
+    --col-start: 2;
   }
 
   .col-end-3\@md {
-    grid-column-end: 3;
+    --col-end: 3;
   }
 
   .col-3\@md {
-    grid-column-end: span 3;
+    --span: 3;
   }
 
   .col-start-3\@md {
-    grid-column-start: 3;
+    --col-start: 3;
   }
 
   .col-end-4\@md {
-    grid-column-end: 4;
+    --col-end: 4;
   }
 
   .col-4\@md {
-    grid-column-end: span 4;
+    --span: 4;
   }
 
   .col-start-4\@md {
-    grid-column-start: 4;
+    --col-start: 4;
   }
 
   .col-end-5\@md {
-    grid-column-end: 5;
+    --col-end: 5;
   }
 
   .col-5\@md {
-    grid-column-end: span 5;
+    --span: 5;
   }
 
   .col-start-5\@md {
-    grid-column-start: 5;
+    --col-start: 5;
   }
 
   .col-end-6\@md {
-    grid-column-end: 6;
+    --col-end: 6;
   }
 
   .col-6\@md {
-    grid-column-end: span 6;
+    --span: 6;
   }
 
   .col-start-6\@md {
-    grid-column-start: 6;
+    --col-start: 6;
   }
 
   .col-end-7\@md {
-    grid-column-end: 7;
+    --col-end: 7;
   }
 
   .col-7\@md {
-    grid-column-end: span 7;
+    --span: 7;
   }
 
   .col-start-7\@md {
-    grid-column-start: 7;
+    --col-start: 7;
   }
 
   .col-end-8\@md {
-    grid-column-end: 8;
+    --col-end: 8;
   }
 
   .col-8\@md {
-    grid-column-end: span 8;
+    --span: 8;
   }
 
   .col-start-8\@md {
-    grid-column-start: 8;
+    --col-start: 8;
   }
 
   .col-end-9\@md {
-    grid-column-end: 9;
+    --col-end: 9;
   }
 
   .col-9\@md {
-    grid-column-end: span 9;
+    --span: 9;
   }
 
   .col-start-9\@md {
-    grid-column-start: 9;
+    --col-start: 9;
   }
 
   .col-end-10\@md {
-    grid-column-end: 10;
+    --col-end: 10;
   }
 
   .col-10\@md {
-    grid-column-end: span 10;
+    --span: 10;
   }
 
   .col-start-10\@md {
-    grid-column-start: 10;
+    --col-start: 10;
   }
 
   .col-end-11\@md {
-    grid-column-end: 11;
+    --col-end: 11;
   }
 
   .col-11\@md {
-    grid-column-end: span 11;
+    --span: 11;
   }
 
   .col-start-11\@md {
-    grid-column-start: 11;
+    --col-start: 11;
   }
 
   .col-end-12\@md {
-    grid-column-end: 12;
+    --col-end: 12;
   }
 
   .col-12\@md {
-    grid-column-end: span 12;
+    --span: 12;
   }
 
   .col-start-12\@md {
-    grid-column-start: 12;
+    --col-start: 12;
   }
 
   .col-end-13\@md {
-    grid-column-end: 13;
+    --col-end: 13;
+  }
+
+  .col-start\@md {
+    --col-start: 1;
+  }
+
+  .col-end\@md {
+    --col-end: -1;
   }
 
   .col-start-auto\@md {
-    grid-column-start: auto;
+    --col-start: auto;
   }
 
   .col-end-auto\@md {
-    grid-column-end: auto;
+    --col-end: auto;
   }
 }
 
@@ -797,155 +833,163 @@
   }
 
   .col-1\@lg {
-    grid-column-end: span 1;
+    --span: 1;
   }
 
   .col-start-1\@lg {
-    grid-column-start: 1;
+    --col-start: 1;
   }
 
   .col-end-2\@lg {
-    grid-column-end: 2;
+    --col-end: 2;
   }
 
   .col-2\@lg {
-    grid-column-end: span 2;
+    --span: 2;
   }
 
   .col-start-2\@lg {
-    grid-column-start: 2;
+    --col-start: 2;
   }
 
   .col-end-3\@lg {
-    grid-column-end: 3;
+    --col-end: 3;
   }
 
   .col-3\@lg {
-    grid-column-end: span 3;
+    --span: 3;
   }
 
   .col-start-3\@lg {
-    grid-column-start: 3;
+    --col-start: 3;
   }
 
   .col-end-4\@lg {
-    grid-column-end: 4;
+    --col-end: 4;
   }
 
   .col-4\@lg {
-    grid-column-end: span 4;
+    --span: 4;
   }
 
   .col-start-4\@lg {
-    grid-column-start: 4;
+    --col-start: 4;
   }
 
   .col-end-5\@lg {
-    grid-column-end: 5;
+    --col-end: 5;
   }
 
   .col-5\@lg {
-    grid-column-end: span 5;
+    --span: 5;
   }
 
   .col-start-5\@lg {
-    grid-column-start: 5;
+    --col-start: 5;
   }
 
   .col-end-6\@lg {
-    grid-column-end: 6;
+    --col-end: 6;
   }
 
   .col-6\@lg {
-    grid-column-end: span 6;
+    --span: 6;
   }
 
   .col-start-6\@lg {
-    grid-column-start: 6;
+    --col-start: 6;
   }
 
   .col-end-7\@lg {
-    grid-column-end: 7;
+    --col-end: 7;
   }
 
   .col-7\@lg {
-    grid-column-end: span 7;
+    --span: 7;
   }
 
   .col-start-7\@lg {
-    grid-column-start: 7;
+    --col-start: 7;
   }
 
   .col-end-8\@lg {
-    grid-column-end: 8;
+    --col-end: 8;
   }
 
   .col-8\@lg {
-    grid-column-end: span 8;
+    --span: 8;
   }
 
   .col-start-8\@lg {
-    grid-column-start: 8;
+    --col-start: 8;
   }
 
   .col-end-9\@lg {
-    grid-column-end: 9;
+    --col-end: 9;
   }
 
   .col-9\@lg {
-    grid-column-end: span 9;
+    --span: 9;
   }
 
   .col-start-9\@lg {
-    grid-column-start: 9;
+    --col-start: 9;
   }
 
   .col-end-10\@lg {
-    grid-column-end: 10;
+    --col-end: 10;
   }
 
   .col-10\@lg {
-    grid-column-end: span 10;
+    --span: 10;
   }
 
   .col-start-10\@lg {
-    grid-column-start: 10;
+    --col-start: 10;
   }
 
   .col-end-11\@lg {
-    grid-column-end: 11;
+    --col-end: 11;
   }
 
   .col-11\@lg {
-    grid-column-end: span 11;
+    --span: 11;
   }
 
   .col-start-11\@lg {
-    grid-column-start: 11;
+    --col-start: 11;
   }
 
   .col-end-12\@lg {
-    grid-column-end: 12;
+    --col-end: 12;
   }
 
   .col-12\@lg {
-    grid-column-end: span 12;
+    --span: 12;
   }
 
   .col-start-12\@lg {
-    grid-column-start: 12;
+    --col-start: 12;
   }
 
   .col-end-13\@lg {
-    grid-column-end: 13;
+    --col-end: 13;
+  }
+
+  .col-start\@lg {
+    --col-start: 1;
+  }
+
+  .col-end\@lg {
+    --col-end: -1;
   }
 
   .col-start-auto\@lg {
-    grid-column-start: auto;
+    --col-start: auto;
   }
 
   .col-end-auto\@lg {
-    grid-column-end: auto;
+    --col-end: auto;
   }
 }
 
@@ -975,154 +1019,162 @@
   }
 
   .col-1\@xl {
-    grid-column-end: span 1;
+    --span: 1;
   }
 
   .col-start-1\@xl {
-    grid-column-start: 1;
+    --col-start: 1;
   }
 
   .col-end-2\@xl {
-    grid-column-end: 2;
+    --col-end: 2;
   }
 
   .col-2\@xl {
-    grid-column-end: span 2;
+    --span: 2;
   }
 
   .col-start-2\@xl {
-    grid-column-start: 2;
+    --col-start: 2;
   }
 
   .col-end-3\@xl {
-    grid-column-end: 3;
+    --col-end: 3;
   }
 
   .col-3\@xl {
-    grid-column-end: span 3;
+    --span: 3;
   }
 
   .col-start-3\@xl {
-    grid-column-start: 3;
+    --col-start: 3;
   }
 
   .col-end-4\@xl {
-    grid-column-end: 4;
+    --col-end: 4;
   }
 
   .col-4\@xl {
-    grid-column-end: span 4;
+    --span: 4;
   }
 
   .col-start-4\@xl {
-    grid-column-start: 4;
+    --col-start: 4;
   }
 
   .col-end-5\@xl {
-    grid-column-end: 5;
+    --col-end: 5;
   }
 
   .col-5\@xl {
-    grid-column-end: span 5;
+    --span: 5;
   }
 
   .col-start-5\@xl {
-    grid-column-start: 5;
+    --col-start: 5;
   }
 
   .col-end-6\@xl {
-    grid-column-end: 6;
+    --col-end: 6;
   }
 
   .col-6\@xl {
-    grid-column-end: span 6;
+    --span: 6;
   }
 
   .col-start-6\@xl {
-    grid-column-start: 6;
+    --col-start: 6;
   }
 
   .col-end-7\@xl {
-    grid-column-end: 7;
+    --col-end: 7;
   }
 
   .col-7\@xl {
-    grid-column-end: span 7;
+    --span: 7;
   }
 
   .col-start-7\@xl {
-    grid-column-start: 7;
+    --col-start: 7;
   }
 
   .col-end-8\@xl {
-    grid-column-end: 8;
+    --col-end: 8;
   }
 
   .col-8\@xl {
-    grid-column-end: span 8;
+    --span: 8;
   }
 
   .col-start-8\@xl {
-    grid-column-start: 8;
+    --col-start: 8;
   }
 
   .col-end-9\@xl {
-    grid-column-end: 9;
+    --col-end: 9;
   }
 
   .col-9\@xl {
-    grid-column-end: span 9;
+    --span: 9;
   }
 
   .col-start-9\@xl {
-    grid-column-start: 9;
+    --col-start: 9;
   }
 
   .col-end-10\@xl {
-    grid-column-end: 10;
+    --col-end: 10;
   }
 
   .col-10\@xl {
-    grid-column-end: span 10;
+    --span: 10;
   }
 
   .col-start-10\@xl {
-    grid-column-start: 10;
+    --col-start: 10;
   }
 
   .col-end-11\@xl {
-    grid-column-end: 11;
+    --col-end: 11;
   }
 
   .col-11\@xl {
-    grid-column-end: span 11;
+    --span: 11;
   }
 
   .col-start-11\@xl {
-    grid-column-start: 11;
+    --col-start: 11;
   }
 
   .col-end-12\@xl {
-    grid-column-end: 12;
+    --col-end: 12;
   }
 
   .col-12\@xl {
-    grid-column-end: span 12;
+    --span: 12;
   }
 
   .col-start-12\@xl {
-    grid-column-start: 12;
+    --col-start: 12;
   }
 
   .col-end-13\@xl {
-    grid-column-end: 13;
+    --col-end: 13;
+  }
+
+  .col-start\@xl {
+    --col-start: 1;
+  }
+
+  .col-end\@xl {
+    --col-end: -1;
   }
 
   .col-start-auto\@xl {
-    grid-column-start: auto;
+    --col-start: auto;
   }
 
   .col-end-auto\@xl {
-    grid-column-end: auto;
+    --col-end: auto;
   }
 }
