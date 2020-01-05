@@ -2,15 +2,23 @@
 
 A lightweight (1KB minified and gzipped) grid system based on CSS Grid Layout.
 
-- 🕹 [Demo + Examples on Codepen](https://codepen.io/collection/nRjWNNQ)
+- 🕹 [Demo + Examples on Codepen](https://codepen.io/collection/nRjWNN)
 - 📝 [Learn CSS Grid by building a grid system](https://dev.to/codyhouse/flash-grid-learn-css-grid-by-building-a-grid-system-2c4f)
 
 ## How to
 
-Download the dist files of this repo, or install via npm:
+A. Download one of the /dist files of the repo and import it in your project.
+
+B. Install via npm and import flashgrid.scss:
 
 ```
 npm i flashgrid
+```
+
+C. Use via CDN:
+
+```
+<link href="https://unpkg.com/flashgrid/dist/flashgrid.min.css" rel="stylesheet">
 ```
 
 ## by CodyHouse
