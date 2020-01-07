@@ -11,7 +11,7 @@ $grid-columns: 12 !default;
   grid-template-columns: repeat(var(--grid-cols), 1fr);
 
   > * {
-    grid-column: span var(--span, #{$grid-columns});
+    grid-column: span var(--span, #{$grid-columns}) / span var(--span, #{$grid-columns});
   }
 }
 
@@ -41,26 +41,14 @@ $grid-columns: 12 !default;
 .grid-gap-xxxl  { --grid-gap: var(--space-xxxl, 8.5rem); }
 .grid-gap-xxxxl { --grid-gap: var(--space-xxxxl, 13.75rem); }
 
-[class*="col-start"] {
-  grid-column: var(--col-start, auto) / span var(--span, 1);
-}
-
-[class*="col-end"] {
-  grid-column: span var(--span, 1) / var(--col-end, auto);
-}
-
-[class*="col-start"][class*="col-end"] {
-  grid-column: var(--col-start, auto) / var(--col-end, auto);
-}
-
 @for $i from 1 through $grid-columns {
-  .col-#{$i}  { --span: #{$i}; }
-  .col-start-#{$i} { --col-start: #{$i}; }
-  .col-end-#{$i+1} { --col-end: #{$i+1}; }
+  .col-#{$i} { --span: #{$i}; }
+  .col-start-#{$i} { grid-column-start: #{$i}; }
+  .col-end-#{$i+1} { grid-column-end: #{$i+1}; }
 }
 
-.col-start { --col-start: 1; }
-.col-end   { --col-end: -1; }
+.col-start { grid-column-start: 1; }
+.col-end   { grid-column-end: -1; }
 
 // breakpoints
 $breakpoints: (
@@ -85,16 +73,16 @@ $breakpoints: (
   .grid-auto-cols\@xs { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); }
   
   @for $i from 1 through $grid-columns {
-    .col-#{$i}\@xs  { --span: #{$i}; }
-    .col-start-#{$i}\@xs { --col-start: #{$i}; }
-    .col-end-#{$i+1}\@xs { --col-end: #{$i+1}; }
+    .col-#{$i}\@xs { --span: #{$i}; }
+    .col-start-#{$i}\@xs { grid-column-start: #{$i}; }
+    .col-end-#{$i+1}\@xs { grid-column-end: #{$i+1}; }
   }
+
+  .col-start\@xs { grid-column-start: 1; }
+  .col-end\@xs   { grid-column-end: -1; }
   
-  .col-start\@xs { --col-start: 1; }
-  .col-end\@xs   { --col-end: -1; }
-  
-  .col-start-auto\@xs { --col-start: auto; }
-  .col-end-auto\@xs   { --col-end: auto; }
+  .col-start-auto\@xs { grid-column-start: auto; }
+  .col-end-auto\@xs   { grid-column-end: auto; }
 }
 
 @include breakpoint(sm) {
@@ -107,16 +95,16 @@ $breakpoints: (
   .grid-auto-cols\@sm { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); }
 
   @for $i from 1 through $grid-columns {
-    .col-#{$i}\@sm  { --span: #{$i}; }
-    .col-start-#{$i}\@sm { --col-start: #{$i}; }
-    .col-end-#{$i+1}\@sm { --col-end: #{$i+1}; }
+    .col-#{$i}\@sm { --span: #{$i}; }
+    .col-start-#{$i}\@sm { grid-column-start: #{$i}; }
+    .col-end-#{$i+1}\@sm { grid-column-end: #{$i+1}; }
   }
 
-  .col-start\@sm { --col-start: 1; }
-  .col-end\@sm   { --col-end: -1; }
+  .col-start\@sm { grid-column-start: 1; }
+  .col-end\@sm   { grid-column-end: -1; }
   
-  .col-start-auto\@sm { --col-start: auto; }
-  .col-end-auto\@sm   { --col-end: auto; }
+  .col-start-auto\@sm { grid-column-start: auto; }
+  .col-end-auto\@sm   { grid-column-end: auto; }
 }
 
 @include breakpoint(md) {
@@ -129,16 +117,16 @@ $breakpoints: (
   .grid-auto-cols\@md { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); }
 
   @for $i from 1 through $grid-columns {
-    .col-#{$i}\@md  { --span: #{$i}; }
-    .col-start-#{$i}\@md { --col-start: #{$i}; }
-    .col-end-#{$i+1}\@md { --col-end: #{$i+1}; }
+    .col-#{$i}\@md { --span: #{$i}; }
+    .col-start-#{$i}\@md { grid-column-start: #{$i}; }
+    .col-end-#{$i+1}\@md { grid-column-end: #{$i+1}; }
   }
 
-  .col-start\@md { --col-start: 1; }
-  .col-end\@md   { --col-end: -1; }
+  .col-start\@md { grid-column-start: 1; }
+  .col-end\@md   { grid-column-end: -1; }
   
-  .col-start-auto\@md { --col-start: auto; }
-  .col-end-auto\@md   { --col-end: auto; }
+  .col-start-auto\@md { grid-column-start: auto; }
+  .col-end-auto\@md   { grid-column-end: auto; }
 }
 
 @include breakpoint(lg) {
@@ -151,16 +139,16 @@ $breakpoints: (
   .grid-auto-cols\@lg { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); }
 
   @for $i from 1 through $grid-columns {
-    .col-#{$i}\@lg  { --span: #{$i}; }
-    .col-start-#{$i}\@lg { --col-start: #{$i}; }
-    .col-end-#{$i+1}\@lg { --col-end: #{$i+1}; }
+    .col-#{$i}\@lg { --span: #{$i}; }
+    .col-start-#{$i}\@lg { grid-column-start: #{$i}; }
+    .col-end-#{$i+1}\@lg { grid-column-end: #{$i+1}; }
   }
 
-  .col-start\@lg { --col-start: 1; }
-  .col-end\@lg   { --col-end: -1; }
+  .col-start\@lg { grid-column-start: 1; }
+  .col-end\@lg   { grid-column-end: -1; }
   
-  .col-start-auto\@lg { --col-start: auto; }
-  .col-end-auto\@lg   { --col-end: auto; }
+  .col-start-auto\@lg { grid-column-start: auto; }
+  .col-end-auto\@lg   { grid-column-end: auto; }
 }
 
 @include breakpoint(xl) {
@@ -173,14 +161,14 @@ $breakpoints: (
   .grid-auto-cols\@xl { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); }
 
   @for $i from 1 through $grid-columns {
-    .col-#{$i}\@xl  { --span: #{$i}; }
-    .col-start-#{$i}\@xl { --col-start: #{$i}; }
-    .col-end-#{$i+1}\@xl { --col-end: #{$i+1}; }
+    .col-#{$i}\@xl { --span: #{$i}; }
+    .col-start-#{$i}\@xl { grid-column-start: #{$i}; }
+    .col-end-#{$i+1}\@xl { grid-column-end: #{$i+1}; }
   }
 
-  .col-start\@xl { --col-start: 1; }
-  .col-end\@xl   { --col-end: -1; }
+  .col-start\@xl { grid-column-start: 1; }
+  .col-end\@xl   { grid-column-end: -1; }
   
-  .col-start-auto\@xl { --col-start: auto; }
-  .col-end-auto\@xl   { --col-end: auto; }
+  .col-start-auto\@xl { grid-column-start: auto; }
+  .col-end-auto\@xl   { grid-column-end: auto; }
 }

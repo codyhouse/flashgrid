@@ -10,7 +10,7 @@
 }
 
 .grid > * {
-  grid-column: span var(--span, 12);
+  grid-column: span var(--span, 12)/span var(--span, 12);
 }
 
 .grid-auto-xs, .grid-auto-sm, .grid-auto-md, .grid-auto-lg, .grid-auto-xl {
@@ -85,28 +85,16 @@
   --grid-gap: var(--space-xxxxl, 13.75rem);
 }
 
-[class*="col-start"] {
-  grid-column: var(--col-start, auto)/span var(--span, 1);
-}
-
-[class*="col-end"] {
-  grid-column: span var(--span, 1)/var(--col-end, auto);
-}
-
-[class*="col-start"][class*="col-end"] {
-  grid-column: var(--col-start, auto)/var(--col-end, auto);
-}
-
 .col-1 {
   --span: 1;
 }
 
 .col-start-1 {
-  --col-start: 1;
+  grid-column-start: 1;
 }
 
 .col-end-2 {
-  --col-end: 2;
+  grid-column-end: 2;
 }
 
 .col-2 {
@@ -114,11 +102,11 @@
 }
 
 .col-start-2 {
-  --col-start: 2;
+  grid-column-start: 2;
 }
 
 .col-end-3 {
-  --col-end: 3;
+  grid-column-end: 3;
 }
 
 .col-3 {
@@ -126,11 +114,11 @@
 }
 
 .col-start-3 {
-  --col-start: 3;
+  grid-column-start: 3;
 }
 
 .col-end-4 {
-  --col-end: 4;
+  grid-column-end: 4;
 }
 
 .col-4 {
@@ -138,11 +126,11 @@
 }
 
 .col-start-4 {
-  --col-start: 4;
+  grid-column-start: 4;
 }
 
 .col-end-5 {
-  --col-end: 5;
+  grid-column-end: 5;
 }
 
 .col-5 {
@@ -150,11 +138,11 @@
 }
 
 .col-start-5 {
-  --col-start: 5;
+  grid-column-start: 5;
 }
 
 .col-end-6 {
-  --col-end: 6;
+  grid-column-end: 6;
 }
 
 .col-6 {
@@ -162,11 +150,11 @@
 }
 
 .col-start-6 {
-  --col-start: 6;
+  grid-column-start: 6;
 }
 
 .col-end-7 {
-  --col-end: 7;
+  grid-column-end: 7;
 }
 
 .col-7 {
@@ -174,11 +162,11 @@
 }
 
 .col-start-7 {
-  --col-start: 7;
+  grid-column-start: 7;
 }
 
 .col-end-8 {
-  --col-end: 8;
+  grid-column-end: 8;
 }
 
 .col-8 {
@@ -186,11 +174,11 @@
 }
 
 .col-start-8 {
-  --col-start: 8;
+  grid-column-start: 8;
 }
 
 .col-end-9 {
-  --col-end: 9;
+  grid-column-end: 9;
 }
 
 .col-9 {
@@ -198,11 +186,11 @@
 }
 
 .col-start-9 {
-  --col-start: 9;
+  grid-column-start: 9;
 }
 
 .col-end-10 {
-  --col-end: 10;
+  grid-column-end: 10;
 }
 
 .col-10 {
@@ -210,11 +198,11 @@
 }
 
 .col-start-10 {
-  --col-start: 10;
+  grid-column-start: 10;
 }
 
 .col-end-11 {
-  --col-end: 11;
+  grid-column-end: 11;
 }
 
 .col-11 {
@@ -222,11 +210,11 @@
 }
 
 .col-start-11 {
-  --col-start: 11;
+  grid-column-start: 11;
 }
 
 .col-end-12 {
-  --col-end: 12;
+  grid-column-end: 12;
 }
 
 .col-12 {
@@ -234,19 +222,19 @@
 }
 
 .col-start-12 {
-  --col-start: 12;
+  grid-column-start: 12;
 }
 
 .col-end-13 {
-  --col-end: 13;
+  grid-column-end: 13;
 }
 
 .col-start {
-  --col-start: 1;
+  grid-column-start: 1;
 }
 
 .col-end {
-  --col-end: -1;
+  grid-column-end: -1;
 }
 
 @media (min-width: 32rem) {
@@ -279,11 +267,11 @@
   }
 
   .col-start-1\@xs {
-    --col-start: 1;
+    grid-column-start: 1;
   }
 
   .col-end-2\@xs {
-    --col-end: 2;
+    grid-column-end: 2;
   }
 
   .col-2\@xs {
@@ -291,11 +279,11 @@
   }
 
   .col-start-2\@xs {
-    --col-start: 2;
+    grid-column-start: 2;
   }
 
   .col-end-3\@xs {
-    --col-end: 3;
+    grid-column-end: 3;
   }
 
   .col-3\@xs {
@@ -303,11 +291,11 @@
   }
 
   .col-start-3\@xs {
-    --col-start: 3;
+    grid-column-start: 3;
   }
 
   .col-end-4\@xs {
-    --col-end: 4;
+    grid-column-end: 4;
   }
 
   .col-4\@xs {
@@ -315,11 +303,11 @@
   }
 
   .col-start-4\@xs {
-    --col-start: 4;
+    grid-column-start: 4;
   }
 
   .col-end-5\@xs {
-    --col-end: 5;
+    grid-column-end: 5;
   }
 
   .col-5\@xs {
@@ -327,11 +315,11 @@
   }
 
   .col-start-5\@xs {
-    --col-start: 5;
+    grid-column-start: 5;
   }
 
   .col-end-6\@xs {
-    --col-end: 6;
+    grid-column-end: 6;
   }
 
   .col-6\@xs {
@@ -339,11 +327,11 @@
   }
 
   .col-start-6\@xs {
-    --col-start: 6;
+    grid-column-start: 6;
   }
 
   .col-end-7\@xs {
-    --col-end: 7;
+    grid-column-end: 7;
   }
 
   .col-7\@xs {
@@ -351,11 +339,11 @@
   }
 
   .col-start-7\@xs {
-    --col-start: 7;
+    grid-column-start: 7;
   }
 
   .col-end-8\@xs {
-    --col-end: 8;
+    grid-column-end: 8;
   }
 
   .col-8\@xs {
@@ -363,11 +351,11 @@
   }
 
   .col-start-8\@xs {
-    --col-start: 8;
+    grid-column-start: 8;
   }
 
   .col-end-9\@xs {
-    --col-end: 9;
+    grid-column-end: 9;
   }
 
   .col-9\@xs {
@@ -375,11 +363,11 @@
   }
 
   .col-start-9\@xs {
-    --col-start: 9;
+    grid-column-start: 9;
   }
 
   .col-end-10\@xs {
-    --col-end: 10;
+    grid-column-end: 10;
   }
 
   .col-10\@xs {
@@ -387,11 +375,11 @@
   }
 
   .col-start-10\@xs {
-    --col-start: 10;
+    grid-column-start: 10;
   }
 
   .col-end-11\@xs {
-    --col-end: 11;
+    grid-column-end: 11;
   }
 
   .col-11\@xs {
@@ -399,11 +387,11 @@
   }
 
   .col-start-11\@xs {
-    --col-start: 11;
+    grid-column-start: 11;
   }
 
   .col-end-12\@xs {
-    --col-end: 12;
+    grid-column-end: 12;
   }
 
   .col-12\@xs {
@@ -411,27 +399,27 @@
   }
 
   .col-start-12\@xs {
-    --col-start: 12;
+    grid-column-start: 12;
   }
 
   .col-end-13\@xs {
-    --col-end: 13;
+    grid-column-end: 13;
   }
 
   .col-start\@xs {
-    --col-start: 1;
+    grid-column-start: 1;
   }
 
   .col-end\@xs {
-    --col-end: -1;
+    grid-column-end: -1;
   }
 
   .col-start-auto\@xs {
-    --col-start: auto;
+    grid-column-start: auto;
   }
 
   .col-end-auto\@xs {
-    --col-end: auto;
+    grid-column-end: auto;
   }
 }
 
@@ -465,11 +453,11 @@
   }
 
   .col-start-1\@sm {
-    --col-start: 1;
+    grid-column-start: 1;
   }
 
   .col-end-2\@sm {
-    --col-end: 2;
+    grid-column-end: 2;
   }
 
   .col-2\@sm {
@@ -477,11 +465,11 @@
   }
 
   .col-start-2\@sm {
-    --col-start: 2;
+    grid-column-start: 2;
   }
 
   .col-end-3\@sm {
-    --col-end: 3;
+    grid-column-end: 3;
   }
 
   .col-3\@sm {
@@ -489,11 +477,11 @@
   }
 
   .col-start-3\@sm {
-    --col-start: 3;
+    grid-column-start: 3;
   }
 
   .col-end-4\@sm {
-    --col-end: 4;
+    grid-column-end: 4;
   }
 
   .col-4\@sm {
@@ -501,11 +489,11 @@
   }
 
   .col-start-4\@sm {
-    --col-start: 4;
+    grid-column-start: 4;
   }
 
   .col-end-5\@sm {
-    --col-end: 5;
+    grid-column-end: 5;
   }
 
   .col-5\@sm {
@@ -513,11 +501,11 @@
   }
 
   .col-start-5\@sm {
-    --col-start: 5;
+    grid-column-start: 5;
   }
 
   .col-end-6\@sm {
-    --col-end: 6;
+    grid-column-end: 6;
   }
 
   .col-6\@sm {
@@ -525,11 +513,11 @@
   }
 
   .col-start-6\@sm {
-    --col-start: 6;
+    grid-column-start: 6;
   }
 
   .col-end-7\@sm {
-    --col-end: 7;
+    grid-column-end: 7;
   }
 
   .col-7\@sm {
@@ -537,11 +525,11 @@
   }
 
   .col-start-7\@sm {
-    --col-start: 7;
+    grid-column-start: 7;
   }
 
   .col-end-8\@sm {
-    --col-end: 8;
+    grid-column-end: 8;
   }
 
   .col-8\@sm {
@@ -549,11 +537,11 @@
   }
 
   .col-start-8\@sm {
-    --col-start: 8;
+    grid-column-start: 8;
   }
 
   .col-end-9\@sm {
-    --col-end: 9;
+    grid-column-end: 9;
   }
 
   .col-9\@sm {
@@ -561,11 +549,11 @@
   }
 
   .col-start-9\@sm {
-    --col-start: 9;
+    grid-column-start: 9;
   }
 
   .col-end-10\@sm {
-    --col-end: 10;
+    grid-column-end: 10;
   }
 
   .col-10\@sm {
@@ -573,11 +561,11 @@
   }
 
   .col-start-10\@sm {
-    --col-start: 10;
+    grid-column-start: 10;
   }
 
   .col-end-11\@sm {
-    --col-end: 11;
+    grid-column-end: 11;
   }
 
   .col-11\@sm {
@@ -585,11 +573,11 @@
   }
 
   .col-start-11\@sm {
-    --col-start: 11;
+    grid-column-start: 11;
   }
 
   .col-end-12\@sm {
-    --col-end: 12;
+    grid-column-end: 12;
   }
 
   .col-12\@sm {
@@ -597,27 +585,27 @@
   }
 
   .col-start-12\@sm {
-    --col-start: 12;
+    grid-column-start: 12;
   }
 
   .col-end-13\@sm {
-    --col-end: 13;
+    grid-column-end: 13;
   }
 
   .col-start\@sm {
-    --col-start: 1;
+    grid-column-start: 1;
   }
 
   .col-end\@sm {
-    --col-end: -1;
+    grid-column-end: -1;
   }
 
   .col-start-auto\@sm {
-    --col-start: auto;
+    grid-column-start: auto;
   }
 
   .col-end-auto\@sm {
-    --col-end: auto;
+    grid-column-end: auto;
   }
 }
 
@@ -651,11 +639,11 @@
   }
 
   .col-start-1\@md {
-    --col-start: 1;
+    grid-column-start: 1;
   }
 
   .col-end-2\@md {
-    --col-end: 2;
+    grid-column-end: 2;
   }
 
   .col-2\@md {
@@ -663,11 +651,11 @@
   }
 
   .col-start-2\@md {
-    --col-start: 2;
+    grid-column-start: 2;
   }
 
   .col-end-3\@md {
-    --col-end: 3;
+    grid-column-end: 3;
   }
 
   .col-3\@md {
@@ -675,11 +663,11 @@
   }
 
   .col-start-3\@md {
-    --col-start: 3;
+    grid-column-start: 3;
   }
 
   .col-end-4\@md {
-    --col-end: 4;
+    grid-column-end: 4;
   }
 
   .col-4\@md {
@@ -687,11 +675,11 @@
   }
 
   .col-start-4\@md {
-    --col-start: 4;
+    grid-column-start: 4;
   }
 
   .col-end-5\@md {
-    --col-end: 5;
+    grid-column-end: 5;
   }
 
   .col-5\@md {
@@ -699,11 +687,11 @@
   }
 
   .col-start-5\@md {
-    --col-start: 5;
+    grid-column-start: 5;
   }
 
   .col-end-6\@md {
-    --col-end: 6;
+    grid-column-end: 6;
   }
 
   .col-6\@md {
@@ -711,11 +699,11 @@
   }
 
   .col-start-6\@md {
-    --col-start: 6;
+    grid-column-start: 6;
   }
 
   .col-end-7\@md {
-    --col-end: 7;
+    grid-column-end: 7;
   }
 
   .col-7\@md {
@@ -723,11 +711,11 @@
   }
 
   .col-start-7\@md {
-    --col-start: 7;
+    grid-column-start: 7;
   }
 
   .col-end-8\@md {
-    --col-end: 8;
+    grid-column-end: 8;
   }
 
   .col-8\@md {
@@ -735,11 +723,11 @@
   }
 
   .col-start-8\@md {
-    --col-start: 8;
+    grid-column-start: 8;
   }
 
   .col-end-9\@md {
-    --col-end: 9;
+    grid-column-end: 9;
   }
 
   .col-9\@md {
@@ -747,11 +735,11 @@
   }
 
   .col-start-9\@md {
-    --col-start: 9;
+    grid-column-start: 9;
   }
 
   .col-end-10\@md {
-    --col-end: 10;
+    grid-column-end: 10;
   }
 
   .col-10\@md {
@@ -759,11 +747,11 @@
   }
 
   .col-start-10\@md {
-    --col-start: 10;
+    grid-column-start: 10;
   }
 
   .col-end-11\@md {
-    --col-end: 11;
+    grid-column-end: 11;
   }
 
   .col-11\@md {
@@ -771,11 +759,11 @@
   }
 
   .col-start-11\@md {
-    --col-start: 11;
+    grid-column-start: 11;
   }
 
   .col-end-12\@md {
-    --col-end: 12;
+    grid-column-end: 12;
   }
 
   .col-12\@md {
@@ -783,27 +771,27 @@
   }
 
   .col-start-12\@md {
-    --col-start: 12;
+    grid-column-start: 12;
   }
 
   .col-end-13\@md {
-    --col-end: 13;
+    grid-column-end: 13;
   }
 
   .col-start\@md {
-    --col-start: 1;
+    grid-column-start: 1;
   }
 
   .col-end\@md {
-    --col-end: -1;
+    grid-column-end: -1;
   }
 
   .col-start-auto\@md {
-    --col-start: auto;
+    grid-column-start: auto;
   }
 
   .col-end-auto\@md {
-    --col-end: auto;
+    grid-column-end: auto;
   }
 }
 
@@ -837,11 +825,11 @@
   }
 
   .col-start-1\@lg {
-    --col-start: 1;
+    grid-column-start: 1;
   }
 
   .col-end-2\@lg {
-    --col-end: 2;
+    grid-column-end: 2;
   }
 
   .col-2\@lg {
@@ -849,11 +837,11 @@
   }
 
   .col-start-2\@lg {
-    --col-start: 2;
+    grid-column-start: 2;
   }
 
   .col-end-3\@lg {
-    --col-end: 3;
+    grid-column-end: 3;
   }
 
   .col-3\@lg {
@@ -861,11 +849,11 @@
   }
 
   .col-start-3\@lg {
-    --col-start: 3;
+    grid-column-start: 3;
   }
 
   .col-end-4\@lg {
-    --col-end: 4;
+    grid-column-end: 4;
   }
 
   .col-4\@lg {
@@ -873,11 +861,11 @@
   }
 
   .col-start-4\@lg {
-    --col-start: 4;
+    grid-column-start: 4;
   }
 
   .col-end-5\@lg {
-    --col-end: 5;
+    grid-column-end: 5;
   }
 
   .col-5\@lg {
@@ -885,11 +873,11 @@
   }
 
   .col-start-5\@lg {
-    --col-start: 5;
+    grid-column-start: 5;
   }
 
   .col-end-6\@lg {
-    --col-end: 6;
+    grid-column-end: 6;
   }
 
   .col-6\@lg {
@@ -897,11 +885,11 @@
   }
 
   .col-start-6\@lg {
-    --col-start: 6;
+    grid-column-start: 6;
   }
 
   .col-end-7\@lg {
-    --col-end: 7;
+    grid-column-end: 7;
   }
 
   .col-7\@lg {
@@ -909,11 +897,11 @@
   }
 
   .col-start-7\@lg {
-    --col-start: 7;
+    grid-column-start: 7;
   }
 
   .col-end-8\@lg {
-    --col-end: 8;
+    grid-column-end: 8;
   }
 
   .col-8\@lg {
@@ -921,11 +909,11 @@
   }
 
   .col-start-8\@lg {
-    --col-start: 8;
+    grid-column-start: 8;
   }
 
   .col-end-9\@lg {
-    --col-end: 9;
+    grid-column-end: 9;
   }
 
   .col-9\@lg {
@@ -933,11 +921,11 @@
   }
 
   .col-start-9\@lg {
-    --col-start: 9;
+    grid-column-start: 9;
   }
 
   .col-end-10\@lg {
-    --col-end: 10;
+    grid-column-end: 10;
   }
 
   .col-10\@lg {
@@ -945,11 +933,11 @@
   }
 
   .col-start-10\@lg {
-    --col-start: 10;
+    grid-column-start: 10;
   }
 
   .col-end-11\@lg {
-    --col-end: 11;
+    grid-column-end: 11;
   }
 
   .col-11\@lg {
@@ -957,11 +945,11 @@
   }
 
   .col-start-11\@lg {
-    --col-start: 11;
+    grid-column-start: 11;
   }
 
   .col-end-12\@lg {
-    --col-end: 12;
+    grid-column-end: 12;
   }
 
   .col-12\@lg {
@@ -969,27 +957,27 @@
   }
 
   .col-start-12\@lg {
-    --col-start: 12;
+    grid-column-start: 12;
   }
 
   .col-end-13\@lg {
-    --col-end: 13;
+    grid-column-end: 13;
   }
 
   .col-start\@lg {
-    --col-start: 1;
+    grid-column-start: 1;
   }
 
   .col-end\@lg {
-    --col-end: -1;
+    grid-column-end: -1;
   }
 
   .col-start-auto\@lg {
-    --col-start: auto;
+    grid-column-start: auto;
   }
 
   .col-end-auto\@lg {
-    --col-end: auto;
+    grid-column-end: auto;
   }
 }
 
@@ -1023,11 +1011,11 @@
   }
 
   .col-start-1\@xl {
-    --col-start: 1;
+    grid-column-start: 1;
   }
 
   .col-end-2\@xl {
-    --col-end: 2;
+    grid-column-end: 2;
   }
 
   .col-2\@xl {
@@ -1035,11 +1023,11 @@
   }
 
   .col-start-2\@xl {
-    --col-start: 2;
+    grid-column-start: 2;
   }
 
   .col-end-3\@xl {
-    --col-end: 3;
+    grid-column-end: 3;
   }
 
   .col-3\@xl {
@@ -1047,11 +1035,11 @@
   }
 
   .col-start-3\@xl {
-    --col-start: 3;
+    grid-column-start: 3;
   }
 
   .col-end-4\@xl {
-    --col-end: 4;
+    grid-column-end: 4;
   }
 
   .col-4\@xl {
@@ -1059,11 +1047,11 @@
   }
 
   .col-start-4\@xl {
-    --col-start: 4;
+    grid-column-start: 4;
   }
 
   .col-end-5\@xl {
-    --col-end: 5;
+    grid-column-end: 5;
   }
 
   .col-5\@xl {
@@ -1071,11 +1059,11 @@
   }
 
   .col-start-5\@xl {
-    --col-start: 5;
+    grid-column-start: 5;
   }
 
   .col-end-6\@xl {
-    --col-end: 6;
+    grid-column-end: 6;
   }
 
   .col-6\@xl {
@@ -1083,11 +1071,11 @@
   }
 
   .col-start-6\@xl {
-    --col-start: 6;
+    grid-column-start: 6;
   }
 
   .col-end-7\@xl {
-    --col-end: 7;
+    grid-column-end: 7;
   }
 
   .col-7\@xl {
@@ -1095,11 +1083,11 @@
   }
 
   .col-start-7\@xl {
-    --col-start: 7;
+    grid-column-start: 7;
   }
 
   .col-end-8\@xl {
-    --col-end: 8;
+    grid-column-end: 8;
   }
 
   .col-8\@xl {
@@ -1107,11 +1095,11 @@
   }
 
   .col-start-8\@xl {
-    --col-start: 8;
+    grid-column-start: 8;
   }
 
   .col-end-9\@xl {
-    --col-end: 9;
+    grid-column-end: 9;
   }
 
   .col-9\@xl {
@@ -1119,11 +1107,11 @@
   }
 
   .col-start-9\@xl {
-    --col-start: 9;
+    grid-column-start: 9;
   }
 
   .col-end-10\@xl {
-    --col-end: 10;
+    grid-column-end: 10;
   }
 
   .col-10\@xl {
@@ -1131,11 +1119,11 @@
   }
 
   .col-start-10\@xl {
-    --col-start: 10;
+    grid-column-start: 10;
   }
 
   .col-end-11\@xl {
-    --col-end: 11;
+    grid-column-end: 11;
   }
 
   .col-11\@xl {
@@ -1143,11 +1131,11 @@
   }
 
   .col-start-11\@xl {
-    --col-start: 11;
+    grid-column-start: 11;
   }
 
   .col-end-12\@xl {
-    --col-end: 12;
+    grid-column-end: 12;
   }
 
   .col-12\@xl {
@@ -1155,26 +1143,26 @@
   }
 
   .col-start-12\@xl {
-    --col-start: 12;
+    grid-column-start: 12;
   }
 
   .col-end-13\@xl {
-    --col-end: 13;
+    grid-column-end: 13;
   }
 
   .col-start\@xl {
-    --col-start: 1;
+    grid-column-start: 1;
   }
 
   .col-end\@xl {
-    --col-end: -1;
+    grid-column-end: -1;
   }
 
   .col-start-auto\@xl {
-    --col-start: auto;
+    grid-column-start: auto;
   }
 
   .col-end-auto\@xl {
-    --col-end: auto;
+    grid-column-end: auto;
   }
 }
